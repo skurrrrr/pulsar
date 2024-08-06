@@ -1,0 +1,23 @@
+git clone https://github.com/skurrrrr/pulsar
+cd pulsar
+echo "# pulsar" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:skurrrrr/pulsar.git
+git push -u origin main
+
+python3 -m venv /home/boxr/pulsar/
+source /home/boxr/pulsar/bin/activate
+
+mkdir skynet
+cd skynet
+
+django-admin startproject myproject
+
+cd myproject
+python manage.py migrate
+python manage.py createsuperuser
+
+python manage.py runserver
